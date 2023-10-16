@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bchedru <bchedru@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:31:29 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/16 16:44:36 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/16 20:01:23 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 
 int	ft_isdigit(unsigned char str)

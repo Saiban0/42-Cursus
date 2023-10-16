@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bchedru <bchedru@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:20:39 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/16 16:44:40 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/17 00:10:28 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-int     isascii(unsigned char str)
+
+int     ft_isascii(unsigned char str)
 {
         return (str >= 0 && str <= 127);
 }

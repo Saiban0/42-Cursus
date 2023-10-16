@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 15:43:34 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/16 20:01:17 by bchedru          ###   ########.fr       */
+/*   Created: 2023/10/16 20:05:57 by bchedru           #+#    #+#             */
+/*   Updated: 2023/10/17 00:13:16 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-
-int	ft_strlen(char *str)
+size_t	*ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while(i < size)
 	{
+		dst[i] = src[i];
 		i++;
 	}
-	return (i);
+	dst[i] = '/0';
+	return (size);
 }

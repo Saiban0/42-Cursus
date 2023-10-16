@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 15:43:34 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/16 20:01:17 by bchedru          ###   ########.fr       */
+/*   Created: 2023/10/16 23:24:01 by bchedru           #+#    #+#             */
+/*   Updated: 2023/10/17 00:13:17 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-
-int	ft_strlen(char *str)
+void	*memmove(void *dest, const void *src, size_t n)
 {
 	int	i;
+	unsigned char	temp[n];
 
 	i = 0;
-	while (str[i])
+	while(i < n)
 	{
+		temp[i] = ((const char *)src)[i];
 		i++;
 	}
-	return (i);
+	i = 0;
+	while(i < n)
+	{
+		((unsigned char *)dest)[i] = temp[i];
+		i++;
+	}
+	return (n);
 }

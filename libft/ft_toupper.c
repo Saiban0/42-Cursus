@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bchedru <bchedru@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:01:01 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/16 16:44:46 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/17 00:13:13 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 int	ft_toupper(int c)
 {
