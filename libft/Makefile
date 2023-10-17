@@ -6,15 +6,16 @@
 #    By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 16:02:54 by bchedru           #+#    #+#              #
-#    Updated: 2023/10/17 12:12:07 by bchedru          ###   ########.fr        #
+#    Updated: 2023/10/17 14:42:03 by bchedru          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+SRCS = ft_isascii ft_strncmp ft_tolower ft_isalnum ft_isdigit ft_strchr ft_strrchr ft_toupper ft_isalpha ft_isprint ft_strlen ft_strnstr
 
 INC_FILES = libft.h
 
-SRC = $($(SRC_FILES))
-OBJ = $(SRC:%.c=%.o)
+SRC = $(addsuffix .c,$(SRCS))
+OBJ = $(addsuffix .o,$(SRCS))
 
 CC = cc
 CCFLAGS = -Wall -Wextra -Werror
@@ -24,10 +25,10 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME) : $(OBJ)
-    ar -rcs $(NAME) -I$(OBJ) $(INC_FILES)
+    ar -rcs $(NAME) $(OBJ) $(INC_FILES)
 
 %.o: %.c
-    $(CC) -c -o $@ $< $(INC_DIR) $(CCFLAGS)
+    $(CC) -c -o $@ $< $(CCFLAGS)
 
 clean :
     rm -rf $(OBJ)
