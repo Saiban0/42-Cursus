@@ -6,9 +6,10 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:01:01 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/17 00:13:13 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/17 11:52:59 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include"libft.h"
 
 int	ft_toupper(int c)
 {

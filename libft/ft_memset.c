@@ -6,10 +6,10 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:00:03 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/17 00:13:24 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/17 12:56:00 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include"libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
