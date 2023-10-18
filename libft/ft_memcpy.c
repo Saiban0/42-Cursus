@@ -6,9 +6,10 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 22:57:11 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/17 00:13:19 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/17 14:32:36 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include"libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)

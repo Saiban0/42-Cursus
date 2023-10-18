@@ -6,9 +6,10 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 11:09:39 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/17 12:55:59 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/17 14:39:54 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include"libft.h"
 
 char	*ft_strrchr(const char *s, int c)

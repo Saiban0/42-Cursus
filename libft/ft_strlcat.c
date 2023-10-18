@@ -6,12 +6,13 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 23:48:48 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/17 12:56:13 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/17 14:39:38 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include"libft.h"
 
-size_t	strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	int	dst_size;
 	int	i;

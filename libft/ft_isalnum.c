@@ -6,9 +6,10 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:05:47 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/16 20:01:29 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/17 14:39:15 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include"libft.h"
 
 int	ft_isalnum(unsigned char str)
