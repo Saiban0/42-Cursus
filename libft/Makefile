@@ -6,11 +6,11 @@
 #    By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 16:02:54 by bchedru           #+#    #+#              #
-#    Updated: 2023/10/17 14:42:03 by bchedru          ###   ########.fr        #
+#    Updated: 2023/10/18 11:13:14 by bchedru          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_bzero ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint ft_memcpy ft_memmove ft_memset ft_strlcat ft_strlcpy ft_strlen ft_tolower ft_toupper ft_strchr ft_strrchr ft_strncmp ft_memchr ft_memcmp ft_strnstr
+SRCS = ft_bzero ft_isalnum ft_isalpha ft_isdigit ft_isprint ft_memcpy ft_memmove ft_memset ft_strlcat ft_strlcpy ft_strlen ft_tolower ft_toupper ft_strchr ft_strrchr ft_strncmp ft_memchr ft_memcmp ft_strnstr ft_atoi
 
 INC_FILES = libft.h
 
@@ -25,16 +25,16 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME) : $(OBJ)
-    ar -rcs $(NAME) $(OBJ) $(INC_FILES)
+	ar -rcs $(NAME) $(OBJ) $(INC_FILES)
 
 %.o: %.c
-    $(CC) -c -o $@ $< $(CCFLAGS)
+	$(CC) -c -o $@ $< $(CCFLAGS)
 
 clean :
-    rm -rf $(OBJ)
+	rm -rf $(OBJ)
 
 fclean : clean
-    rm -rf $(NAME)
+	rm -rf $(NAME)
 
 re : fclean all
 

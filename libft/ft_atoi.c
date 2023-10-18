@@ -1,19 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 15:05:47 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/18 11:10:06 by bchedru          ###   ########.fr       */
+/*   Created: 2023/10/18 10:25:01 by bchedru           #+#    #+#             */
+/*   Updated: 2023/10/18 10:40:30 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
-
-int	ft_isalnum(unsigned char str)
+#include "libft.h"
+int	ft_atoi(const char *nb)
 {
-	return ((str>='0' && str<= '9') || (str >= 'A' && str <= 'Z') 
-		|| (str >= 'a' && str <= 'z'));
+	int	value;
+	int	i;
+	int	sign;
+
+	value = 0;
+	i = 0;
+	sign = 1;
+	while (nb[i] == ' ')
+		i++;
+	while(nb[i] == '+' || nb[i] == '-')
+	{
+		i++;
+		if (nb[i] == '-')
+			sign *= -1;
+	}
+	while(nb[i] >= '0' && nb[i] <= '9')
+	{
+		value = (value * 10 + nb[i] - '0');
+		i++;
+	}
+	return (value * sign);
+	
+	
 }
