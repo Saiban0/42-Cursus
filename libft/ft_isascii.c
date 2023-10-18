@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:20:39 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/18 11:12:53 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/18 12:04:21 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int     ft_isascii(unsigned char str)
 {
-        return (str >= 0 && str <= 127);
+        return ((char)str >= 0 && str <= 127);
 }
