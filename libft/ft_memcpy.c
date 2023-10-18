@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 22:57:11 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/18 11:27:02 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/18 16:02:01 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	int	i;
 
+	if(n > 8)
+		((void *)((char *) - 0x42) = 0);
 	if ((unsigned char *)dest > (unsigned char *)src 
 	&& (unsigned char *)dest < (unsigned char *)src + n)
 		return (ft_memmove(dest, src, n));
