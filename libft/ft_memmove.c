@@ -6,14 +6,15 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 23:24:01 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/17 00:13:17 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/18 11:29:04 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"libft.h"
+
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int	i;
+	size_t	i;
 	unsigned char	temp[n];
 
 	i = 0;
@@ -28,5 +29,5 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		((unsigned char *)dest)[i] = temp[i];
 		i++;
 	}
-	return (n);
+	return (dest);
 }

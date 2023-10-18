@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 11:39:11 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/17 14:39:21 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/18 11:42:43 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (*(unsigned char *)s != c &&  i < n)
@@ -22,5 +22,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		i++;
 		s++;
 	}
-	return (s);
+	return ((void *)s);
 }

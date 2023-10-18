@@ -6,15 +6,15 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:05:57 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/17 14:39:43 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/18 11:32:26 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-size_t	*ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while(i < size)
@@ -22,6 +22,6 @@ size_t	*ft_strlcpy(char *dst, const char *src, size_t size)
 		dst[i] = src[i];
 		i++;
 	}
-	dst[i] = '/0';
-	return (size);
+	dst[i] = 0;
+	return (i);
 }
