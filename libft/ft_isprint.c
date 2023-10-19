@@ -6,13 +6,13 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:26:19 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/17 14:38:55 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/19 21:46:48 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-int     ft_isprint(unsigned char str)
+int	ft_isprint(unsigned char str)
 {
-        return (!(str < 32 || str == 127));
+	return (!(str < 32 || str == 127));
 }

@@ -6,11 +6,12 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:25:01 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/19 16:35:04 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/19 21:42:05 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	ft_atoi(const char *nb)
 {
 	int	value;
@@ -30,10 +31,10 @@ int	ft_atoi(const char *nb)
 	}
 	else if (nb[i] == '+')
 		i++;
-	while(nb[i] >= '0' && nb[i] <= '9')
+	while (nb[i] >= '0' && nb[i] <= '9')
 	{
 		value = (value * 10 + nb[i] - '0');
 		i++;
 	}
-	return(value * minus);
+	return (value * minus);
 }

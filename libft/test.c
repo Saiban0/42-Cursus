@@ -4,15 +4,15 @@
 
 int	main(void)
 {
+	char	src[] = "lorem ipsum dolor sit amet";
 	char	*dest;
 
-	if (!(dest = (char *)malloc(sizeof(*dest) * 15)))
-		return (0);
-	memset(dest, 0, 15);
-	memset(dest, 'r', 6);
+	dest = src + 1;
+	if (dest != ft_memmove(dest, src, 8))
+		write(1, "dest's adress was not returned\n", 31);
+	write(1, dest, 22);
+	write(1,"\n", 1);
+	printf("%s", (unsigned char *)ft_memmove(dest, src, 8));
 
-	printf("%zu", ft_strlcpy(dest, "lorem ipsum dolor sit amet", 0));
-	printf("%s", "\n");
-	printf("%zu", strlcpy(dest, "lorem ipsum dolor sit amet", 0));
 	return(0);
 }

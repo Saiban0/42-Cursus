@@ -6,11 +6,11 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:43:34 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/17 14:39:45 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/19 20:13:59 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 int	ft_strlen(char *str)
 {
