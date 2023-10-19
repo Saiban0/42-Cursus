@@ -1,13 +1,18 @@
 #include"libft.h"
 #include<stdio.h>
-#include<string.h>
+#include<bsd/string.h>
 
 int	main(void)
 {
-	char *s = "oskour";
-	char *d = NULL;
+	char	*dest;
 
-	printf("%p", ft_memmove(&s, &d, 0));
-	printf("%p", memmove(&s, &d, 0));
+	if (!(dest = (char *)malloc(sizeof(*dest) * 15)))
+		return (0);
+	memset(dest, 0, 15);
+	memset(dest, 'r', 6);
+
+	printf("%zu", ft_strlcpy(dest, "lorem ipsum dolor sit amet", 0));
+	printf("%s", "\n");
+	printf("%zu", strlcpy(dest, "lorem ipsum dolor sit amet", 0));
 	return(0);
 }

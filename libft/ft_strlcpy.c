@@ -6,22 +6,27 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:05:57 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/18 14:17:10 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/19 18:36:20 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	*ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
 	i = 0;
-	while(i < size)
+	if (size > 0)
 	{
-		dst[i] = src[i];
-		i++;
+		while(src[i] && i < size - 1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = 0;
 	}
-	dst[i] = 0;
-	return (dst);
+	while (src[i])
+		i++;
+	return (i);
 }

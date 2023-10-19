@@ -6,25 +6,27 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 11:24:48 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/17 14:39:50 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/19 13:19:52 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int			nbis;
-	int						i;
+	size_t	i;
 
-	nbis = 0;
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && n > nbis)
+	if (n == 0)
+		return(0);
+	while (s1[i] && s2[i] && n > i)
 	{
 		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+			return((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
-		nbis++;
 	}
+	if (i < n)
+		return((unsigned char)s1[i] - (unsigned char)s2[i]);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 10:50:15 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/18 15:46:26 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/19 13:59:30 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ char	*ft_strchr(const char *s, int c)
 {
 	if (!s)
 		return(NULL);
-	while (*s != c)
+	while (*s != c && *s)
 	{
 		s++;
 	}
-	return ((char *)s);
+	if (*(unsigned char *)s == (unsigned char)c)
+		return ((char *)s);
+	return (NULL);
 }

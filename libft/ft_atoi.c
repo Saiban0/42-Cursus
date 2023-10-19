@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:25:01 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/18 10:40:30 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/19 16:35:04 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@ int	ft_atoi(const char *nb)
 {
 	int	value;
 	int	i;
-	int	sign;
+	int	minus;
 
 	value = 0;
 	i = 0;
-	sign = 1;
-	while (nb[i] == ' ')
+	minus = 1;
+	while (nb[i] == ' ' || nb[i] == '\t' || nb[i] == '\n'
+		|| nb[i] == '\v' || nb[i] == '\f' || nb[i] == '\r')
 		i++;
-	while(nb[i] == '+' || nb[i] == '-')
+	if (nb[i] == '-')
 	{
+		minus = -minus;
 		i++;
-		if (nb[i] == '-')
-			sign *= -1;
 	}
+	else if (nb[i] == '+')
+		i++;
 	while(nb[i] >= '0' && nb[i] <= '9')
 	{
 		value = (value * 10 + nb[i] - '0');
 		i++;
 	}
-	return (value * sign);
-	
-	
+	return(value * minus);
 }
