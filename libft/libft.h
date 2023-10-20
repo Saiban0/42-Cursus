@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 23:00:33 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/20 16:39:17 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/20 17:21:07 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <signal.h>
 
-int			ft_isalpha(unsigned char str);
-int			ft_isdigit(unsigned char str);
+int			ft_isalpha(int str);
+int			ft_isdigit(int str);
 int			ft_isalnum(unsigned char str);
-int			ft_isascii(unsigned char str);
-int			ft_isprint(unsigned char str);
+int			ft_isascii(int str);
+int			ft_isprint(int str);
 size_t		ft_strlen(const char *str);
 void		*ft_memset(void *s, int c, size_t n);
 void		ft_bzero(void *s, size_t n);

@@ -6,13 +6,13 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:20:39 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/19 21:43:33 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/20 17:20:44 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(unsigned char str)
+int	ft_isascii(int str)
 {
 	return ((char)str >= 0 && str <= 127);
 }
