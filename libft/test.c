@@ -4,11 +4,11 @@
 
 int	main(void)
 {
-	/*char s[] = "tripouille";*/
+	char b[0xF0];
 
-	printf("%s", ft_strrchr("teste", '\0'));
+	printf("%s", (char *)ft_memmove(((void *)0), b, 5));
 	write(1,"\n", 1);
-	printf("%s", strrchr("teste", '\0'));
+	/*printf("%s", (char *)memmove(((void *)0), b, 5));*/
 
 	return(0);
 }

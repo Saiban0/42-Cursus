@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 11:09:39 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/20 16:27:50 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/20 18:01:57 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,5 @@ char	*ft_strrchr(const char *s, int c)
 			temp = (char *)s;
 		s++;
 	}
-	if (temp == 0)
-		return (NULL);
 	return (temp);
 }
