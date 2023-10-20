@@ -6,13 +6,13 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:43:34 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/19 20:13:59 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/20 16:37:34 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 

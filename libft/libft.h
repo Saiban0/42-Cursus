@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 23:00:33 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/20 15:43:27 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/20 16:39:17 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int			ft_isdigit(unsigned char str);
 int			ft_isalnum(unsigned char str);
 int			ft_isascii(unsigned char str);
 int			ft_isprint(unsigned char str);
-int			ft_strlen(char *str);
+size_t		ft_strlen(const char *str);
 void		*ft_memset(void *s, int c, size_t n);
 void		ft_bzero(void *s, size_t n);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
