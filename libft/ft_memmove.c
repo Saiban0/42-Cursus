@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 23:24:01 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/19 23:17:21 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/20 15:31:14 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,24 @@
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t			i;
-	unsigned char	*temp;
 
 	if (!dest || !src)
 		return (NULL);
-	temp = (unsigned char *)src;
 	i = 0;
-	while (i < n)
+	if (dest > src)
 	{
-		((unsigned char *)dest)[i] = temp[i];
-		i++;
+		while (n-- > 0)
+		{
+			((unsigned char *)dest)[n] = ((unsigned char *)src)[n];
+		}
+	}
+	else if (dest < src)
+	{
+		while (i < n)
+		{
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
 	}
 	return (dest);
 }
