@@ -4,17 +4,11 @@
 
 int	main(void)
 {
-	char	src[] = "coucou";
-	char	*dest;
-	char	src2[] = "coucou";
+	char s[] = "tripouille";
 
-	dest = src + 1;
-	/*if (dest != ft_memmove(dest, src, 8))
-		write(1, "dest's adress was not returned\n", 31);
-	write(1, dest, 22);*/
-	printf("%s", (unsigned char *)ft_memmove(dest, src, 8));
+	printf("%s", ft_strchr(s, 't'+ 256));
 	write(1,"\n", 1);
-	printf("%s", (unsigned char *)memmove(dest, src2, 8));
+	printf("%s", strchr(s, 't' + 256));
 
 	return(0);
 }
