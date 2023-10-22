@@ -4,11 +4,15 @@
 
 int	main(void)
 {
-	char b[0xF0];
+	int size = 8539;
+ 
+	void * d1 = ft_calloc(size, sizeof(int));
+	void * d2 = calloc(size, sizeof(int));
+	if (memcmp(d1, d2, size * sizeof(int)))
+		printf("%s", "nique");
+	free(d1);
+	free(d2);
 
-	printf("%s", (char *)ft_memmove(((void *)0), b, 5));
-	write(1,"\n", 1);
-	/*printf("%s", (char *)memmove(((void *)0), b, 5));*/
-
+	printf("%s", "toi");
 	return(0);
 }
