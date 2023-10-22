@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 23:00:33 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/22 23:09:04 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/22 23:11:54 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ char		*ft_strnstr(const char *big, const char *little, size_t len);
 int			ft_atoi(const char *nb);
 void		*ft_calloc(size_t nmemb, size_t size);
 char		*ft_strdup(const char *s);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
