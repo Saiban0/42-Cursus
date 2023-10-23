@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_memchr ft_strdup ft_strlcat ft_isalpha ft_toupper ft_tolower ft_isdigit ft_strlen ft_memmove ft_strncmp ft_substr ft_calloc ft_strrchr ft_strlcpy ft_bzero ft_atoi ft_memset ft_isascii ft_strchr ft_isalnum ft_memcmp ft_isprint ft_strnstr ft_memcpy
+SRCS = ft_strlcat ft_atoi ft_bzero ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint ft_memchr ft_memcmp ft_memcpy ft_memset ft_strchr ft_strlcpy ft_strlen ft_strncmp ft_strnstr ft_tolower ft_toupper ft_calloc ft_memmove ft_strdup ft_strrchr ft_substr ft_strjoin ft_strtrim
 
 INC_FILES = libft.h
 
