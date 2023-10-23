@@ -4,7 +4,16 @@
 
 int	main(void)
 {
-	printf("%s", ft_strtrim("coucou", "c"));
+	char	**temp;
+	int		i;
 
+	i = 0;
+	temp = ft_split("j'aime les choux a la creme", ' ');
+	while (temp[i])
+	{
+		printf("%s", temp[i]);
+		i++;
+	}
+	free(temp);
 	return(0);
 }
