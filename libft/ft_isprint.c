@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bchedru <bchedru@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:26:19 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/16 16:44:40 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/20 17:22:20 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-int     ft_isprint(unsigned char str)
+int	ft_isprint(int str)
 {
-        return (!(str < 32 || str == 127));
+	return (' ' <= str && str <= '~');
 }

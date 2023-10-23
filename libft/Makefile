@@ -3,49 +3,39 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bchedru <bchedru@student.42.fr>            +#+  +:+       +#+         #
+#    By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 16:02:54 by bchedru           #+#    #+#              #
-#    Updated: 2023/10/16 16:45:35 by bchedru          ###   ########.fr        #
+#    Updated: 2023/10/23 17:43:56 by bchedru          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC_FILES	=	ft_isalpha.c, \
-				ft_isdigit.c, \
-				ft_isalnum.c, \
-				ft_isascii.c, \
-				ft_isprint.c, \
-				ft_strlen.c, \
-				ft_memset.c, \
+SRCS = ft_strlcat ft_atoi ft_bzero ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint ft_memchr ft_memcmp ft_memcpy ft_memset ft_strchr ft_strlcpy ft_strlen ft_strncmp ft_strnstr ft_tolower ft_toupper ft_calloc ft_memmove ft_strdup ft_strrchr ft_substr ft_strjoin ft_strtrim ft_split
 
+INC_FILES = libft.h
 
+SRC = $(addsuffix .c,$(SRCS))
+OBJ = $(addsuffix .o,$(SRCS))
 
+CC = cc
+CCFLAGS = -Wall -Wextra -Werror -g
 
-INC_FILES	=	libft.h
-
-SRCS		= $($(SRC_FILES))
-OBJS		= $(SRCS:%.c=%.o)
-
-CC		= cc
-CFLAGS		= -Wall -Wextra -Werror
-
-NAME		= libft.a
+NAME = libft.a
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) -o $@ $^
-	ar -rcs $(NAME) $(OBS) libft.h
+$(NAME) : $(OBJ)
+	ar -rcs $(NAME) $(OBJ) $(INC_FILES)
 
 %.o: %.c
-	$(CC) -c -o $@ $< -I$(INC_DIR) $(CFLAGS)
+	$(CC) -c -o $@ $< $(CCFLAGS)
 
 clean :
-	rm -rf $(OBJS)
+	rm -rf $(OBJ)
 
 fclean : clean
 	rm -rf $(NAME)
 
-.PHONY : all re
-
 re : fclean all
+
+.PHONY : all re clean fclean
