@@ -8,10 +8,11 @@ int	main(void)
 	int		i;
 
 	i = 0;
-	temp = ft_split("j'aime les choux a la creme", ' ');
+	temp = ft_split("nonempty", '\0');
 	while (temp[i])
 	{
 		printf("%s", temp[i]);
+		free(temp[i]);
 		i++;
 	}
 	free(temp);
