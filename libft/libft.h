@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 23:00:33 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/24 11:53:43 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/24 15:02:12 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ char		*ft_strjoin(const char *s1, const char *s2);
 char		*ft_strtrim(const char *s1, const char *set);
 char		**ft_split(char const *s, char c);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 #endif
