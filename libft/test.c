@@ -4,17 +4,10 @@
 
 int	main(void)
 {
-	char	**temp;
-	int		i;
+	char	*temp;
 
-	i = 0;
-	temp = ft_split("nonempty", '\0');
-	while (temp[i])
-	{
-		printf("%s", temp[i]);
-		free(temp[i]);
-		i++;
-	}
+	temp = ft_itoa(-424242);
+	printf("%s", temp);
 	free(temp);
 	return(0);
 }
