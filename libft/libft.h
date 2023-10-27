@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 23:00:33 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/26 17:59:53 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/27 11:22:13 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ t_list		*ft_lstlast(t_list *lst);
 void		ft_lstadd_back(t_list **lst, t_list *new);
 void		ft_lstdelone(t_list *lst, void (*del)(void*));
 void		ft_lstclear(t_list **lst, void (*del)(void*));
+void		ft_lstiter(t_list *lst, void (*f)(void *));
 
 #endif
