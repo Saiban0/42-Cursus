@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bchedru <bchedru@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 13:53:34 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/16 16:44:36 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/20 17:19:27 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-int     ft_isalpha(unsigned char str)
+int	ft_isalpha(int str)
 {
-        return (str >= 'A' && str <= 'Z' 
-        || str >= 'a' && str <= 'z');
+	return ((str >= 'A' && str <= 'Z') || (str >= 'a' && str <= 'z'));
 }

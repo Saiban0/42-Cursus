@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bchedru <bchedru@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:05:47 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/16 16:44:37 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/10/19 21:44:42 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 int	ft_isalnum(unsigned char str)
 {
-	return (str>='0' && str<= '9' 
-		|| str >= 'A' && str <= 'Z' 
-		|| str >= 'a' && str <= 'z');
+	return ((str >= '0' && str <= '9') || (str >= 'A' && str <= 'Z')
+		|| (str >= 'a' && str <= 'z'));
 }

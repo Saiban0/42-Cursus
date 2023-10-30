@@ -1,22 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 16:01:01 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/19 20:12:58 by bchedru          ###   ########.fr       */
+/*   Created: 2023/10/16 23:48:48 by bchedru           #+#    #+#             */
+/*   Updated: 2023/10/19 23:08:42 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	if (c >= 97 && c <= 122)
+	size_t	i;
+	size_t	j;
+	size_t	dest_len;
+	size_t	src_len;
+
+	src_len = ft_strlen((char *)src);
+	dest_len = ft_strlen(dst);
+	j = dest_len;
+	i = 0;
+	if (dest_len < size - 1 && size > 0)
 	{
-		return (c - 32);
+		while (src[i] && dest_len + i < size - 1)
+		{
+			dst[j] = src[i];
+			j++;
+			i++;
+		}
+		dst[j] = 0;
 	}
-	return (c);
+	if (dest_len > size)
+		dest_len = size;
+	return (dest_len + src_len);
 }
