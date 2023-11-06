@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 15:43:34 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/31 15:10:42 by bchedru          ###   ########.fr       */
+/*   Created: 2023/10/31 11:35:01 by bchedru           #+#    #+#             */
+/*   Updated: 2023/11/06 13:48:35 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_putstr(char *s)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
+	while (*s)
 	{
-		i++;
+		ft_putchar(*s);
+		s++;
 	}
-	return (i);
 }
