@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 11:27:48 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/06 17:33:01 by bchedru          ###   ########.fr       */
+/*   Created: 2023/10/18 10:25:01 by bchedru           #+#    #+#             */
+/*   Updated: 2023/11/06 14:26:04 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_putdigit(unsigned long int n)
+int	ft_atoi(const char *nb)
 {
-	if (n > 9)
-		ft_putdigit(n / 10);
-	ft_putchar((n % 10) + '0');
-}
+	int	value;
+	int	i;
+	int	minus;
 
-void	ft_putnbr(int n)
-{
-	long int	longn;
-
-	longn = (long int)n;
-	if (n < 0)
+	value = 0;
+	i = 0;
+	minus = 1;
+	while (nb[i] == ' ' || nb[i] == '\t' || nb[i] == '\n'
+		|| nb[i] == '\v' || nb[i] == '\f' || nb[i] == '\r')
+		i++;
+	if (nb[i] == '-')
 	{
-		ft_putchar('-');
-		longn = -longn;
+		minus = -minus;
+		i++;
 	}
-	ft_putdigit(longn);
+	else if (nb[i] == '+')
+		i++;
+	while (nb[i] >= '0' && nb[i] <= '9')
+	{
+		value = (value * 10 + nb[i] - '0');
+		i++;
+	}
+	return (value * minus);
 }
