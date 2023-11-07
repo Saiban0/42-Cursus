@@ -6,11 +6,11 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:27:48 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/06 17:33:01 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/07 15:35:34 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 static void	ft_putdigit(unsigned long int n)
 {
@@ -19,15 +19,24 @@ static void	ft_putdigit(unsigned long int n)
 	ft_putchar((n % 10) + '0');
 }
 
-void	ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
 	long int	longn;
+	int			len;
 
 	longn = (long int)n;
+	len = 1;
 	if (n < 0)
 	{
 		ft_putchar('-');
+		len++;
 		longn = -longn;
 	}
 	ft_putdigit(longn);
+	while (longn > 9)
+	{
+		longn /= 10;
+		len++;
+	}
+	return (len);
 }

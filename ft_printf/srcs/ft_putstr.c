@@ -6,17 +6,21 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:35:01 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/06 13:48:35 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/07 13:25:30 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
-void	ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
-	while (*s)
+	int	i;
+
+	i = 0;
+	while (s[i])
 	{
-		ft_putchar(*s);
-		s++;
+		ft_putchar(s[i]);
+		i++;
 	}
+	return(i);
 }

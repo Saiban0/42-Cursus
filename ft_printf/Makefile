@@ -6,16 +6,16 @@
 #    By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 12:05:45 by bchedru           #+#    #+#              #
-#    Updated: 2023/11/06 14:25:14 by bchedru          ###   ########.fr        #
+#    Updated: 2023/11/07 16:52:27 by bchedru          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = ft_printf ft_putnbr ft_putchar ft_putstr ft_strchr ft_atoi
 
-INC_FILES = includes/libft.h
+INC_FILES = includes/ft_printf.h
 
 SRC = $(addprefix srcs/,$(addsuffix .c,$(SRCS)))
-OBJ = $(addsuffix .o,$(SRCS))
+OBJ = $(addprefix srcs/,$(addsuffix .o,$(SRCS)))
 
 CC = cc
 CCFLAGS = -Wall -Wextra -Werror
@@ -25,7 +25,6 @@ NAME = libftprintf.a
 all: $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) -o $@ $^ $(LFLAGS)
 	ar -rcs $(NAME) $(OBJ) $(INC_FILES)
 
 %.o: %.c
