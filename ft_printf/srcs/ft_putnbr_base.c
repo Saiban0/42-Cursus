@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:44:58 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/08 12:37:18 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/08 13:54:40 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	ft_putdigit(unsigned long int n, char *base, int base_len)
 	ft_putchar(base[n % base_len]);
 }
 
-int	ft_putnbr_base(int n, char *base)
+int	ft_putnbr_base(unsigned int n, char *base)
 {
 	long int	longn;
 	int			len;
@@ -28,12 +28,6 @@ int	ft_putnbr_base(int n, char *base)
 	longn = (long int)n;
 	len = 1;
 	base_len = (int)ft_strlen(base);
-	if (n < 0)
-	{
-		ft_putchar('-');
-		len++;
-		longn = -longn;
-	}
 	ft_putdigit(longn, base, base_len);
 	while (longn >= base_len)
 	{
