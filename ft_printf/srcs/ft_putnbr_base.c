@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 15:43:34 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/31 15:10:42 by bchedru          ###   ########.fr       */
+/*   Created: 2023/11/08 11:44:58 by bchedru           #+#    #+#             */
+/*   Updated: 2023/11/08 14:33:22 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/ft_printf.h"
 
-size_t	ft_strlen(const char *str)
+static void	ft_putdigit(size_t n, char *base, size_t base_len)
 {
-	int	i;
+	if (n >= base_len)
+		ft_putdigit(n / base_len, base, base_len);
+	ft_putchar(base[n % base_len]);
+}
 
-	i = 0;
-	while (str[i])
+int	ft_putnbr_base(size_t n, char *base)
+{
+	int			len;
+	size_t		base_len;
+
+	len = 1;
+	base_len = ft_strlen(base);
+	ft_putdigit(n, base, base_len);
+	while (n >= base_len)
 	{
-		i++;
+		n /= base_len;
+		len++;
 	}
-	return (i);
+	return (len);
 }

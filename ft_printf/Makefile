@@ -6,16 +6,17 @@
 #    By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 12:05:45 by bchedru           #+#    #+#              #
-#    Updated: 2023/10/30 14:36:33 by bchedru          ###   ########.fr        #
+#    Updated: 2023/11/08 14:32:07 by bchedru          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = 
+SRCS = ft_printf ft_strlen ft_putnbr ft_putchar ft_putstr ft_putptr  ft_putnbr_base
 
-INC_FILES = libft.h
+INC_FILES = includes/ft_printf.h
 
-SRC = $(addsuffix .c,$(SRCS))
-OBJ = $(addsuffix .o,$(SRCS))
+SRC = $(addprefix srcs/,$(addsuffix .c,$(SRCS)))
+OBJ = $(addprefix srcs/,$(addsuffix .o,$(SRCS)))
+
 
 CC = cc
 CCFLAGS = -Wall -Wextra -Werror

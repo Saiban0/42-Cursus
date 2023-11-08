@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 15:43:34 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/31 15:10:42 by bchedru          ###   ########.fr       */
+/*   Created: 2023/11/08 14:02:36 by bchedru           #+#    #+#             */
+/*   Updated: 2023/11/08 14:34:04 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/ft_printf.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_putptr(unsigned char *s)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
+	if (s == NULL)
+		return (write(1, "(nil)", 5));
+	write(1, "0x", 2);
+	return (2 + ft_putnbr_base(*(size_t *)&s, "0123456789abcdef"));
 }

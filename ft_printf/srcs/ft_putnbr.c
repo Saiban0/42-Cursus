@@ -1,25 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 15:43:34 by bchedru           #+#    #+#             */
-/*   Updated: 2023/10/31 15:10:42 by bchedru          ###   ########.fr       */
+/*   Created: 2023/10/31 11:27:48 by bchedru           #+#    #+#             */
+/*   Updated: 2023/11/07 15:35:34 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/ft_printf.h"
 
-size_t	ft_strlen(const char *str)
+static void	ft_putdigit(unsigned long int n)
 {
-	int	i;
+	if (n > 9)
+		ft_putdigit(n / 10);
+	ft_putchar((n % 10) + '0');
+}
 
-	i = 0;
-	while (str[i])
+int	ft_putnbr(int n)
+{
+	long int	longn;
+	int			len;
+
+	longn = (long int)n;
+	len = 1;
+	if (n < 0)
 	{
-		i++;
+		ft_putchar('-');
+		len++;
+		longn = -longn;
 	}
-	return (i);
+	ft_putdigit(longn);
+	while (longn > 9)
+	{
+		longn /= 10;
+		len++;
+	}
+	return (len);
 }
