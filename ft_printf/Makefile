@@ -17,6 +17,7 @@ INC_FILES = includes/ft_printf.h
 SRC = $(addprefix srcs/,$(addsuffix .c,$(SRCS)))
 OBJ = $(addprefix srcs/,$(addsuffix .o,$(SRCS)))
 
+
 CC = cc
 CCFLAGS = -Wall -Wextra -Werror
 
