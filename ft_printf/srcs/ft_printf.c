@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:12:16 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/08 11:38:36 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/08 12:31:09 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ static int	checkprint(const char str, va_list args)
 		return(ft_putnbr(va_arg(args, int)));
 	else if (str == 'u')
 		return(ft_putunsigned(va_arg(args, unsigned int)));
-	/*else if (str++ == 'p')
-		ft_putstr();
-	else if (str++ == 'x')
-		
-	else if (str++ == 'X')
-	*/	
+	/*else if (str == 'p')
+		ft_putstr();*/
+	else if (str == 'x')
+		return(ft_putnbr_base(va_arg(args, int), "0123456789abcdef"));
+	else if (str == 'X')
+		return(ft_putnbr_base(va_arg(args, int), "0123456789ABCDEF"));
 	else if (str == '%')
 		return(ft_putchar('%'));
 	return (1);

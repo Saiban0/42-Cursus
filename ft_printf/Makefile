@@ -6,11 +6,11 @@
 #    By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 12:05:45 by bchedru           #+#    #+#              #
-#    Updated: 2023/11/08 11:39:00 by bchedru          ###   ########.fr        #
+#    Updated: 2023/11/08 12:33:12 by bchedru          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_printf ft_putnbr ft_putchar ft_putstr ft_strchr ft_atoi ft_putunsigned
+SRCS = ft_printf ft_strlen ft_putnbr ft_putchar ft_putstr ft_putunsigned  ft_putnbr_base
 
 INC_FILES = includes/ft_printf.h
 
