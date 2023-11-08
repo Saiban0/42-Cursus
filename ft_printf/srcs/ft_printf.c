@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:12:16 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/07 17:09:18 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/08 11:29:07 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,23 @@ int	ft_printf(const char *str, ...)
 	i = 0;
 	res = 0;
 	va_start(args, str);
-	while(str[i] != '%' && str[i])
+	while(str[i])
+	{
+		if(str[i] == '%')
+		{
+			res += checkprint(str[i + 1], args);
+			i++;
+		}
+		else
+		{
+			write(1, &str[i], 1);
+			res++;
+		}
 		i++;
-	res = checkprint(str[i + 1], args);
+	}
+	/*while(str[i] != '%' && str[i])
+		i++;
+	res = checkprint(str[i + 1], args);*/
 	va_end(args);
 	return (res);
 }
