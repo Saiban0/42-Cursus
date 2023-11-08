@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:12:16 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/08 11:29:07 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/08 11:38:36 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	checkprint(const char str, va_list args)
 	else if (str == 'd' || str == 'i')
 		return(ft_putnbr(va_arg(args, int)));
 	else if (str == 'u')
-		return(ft_putnbr(va_arg(args, unsigned int)));
+		return(ft_putunsigned(va_arg(args, unsigned int)));
 	/*else if (str++ == 'p')
 		ft_putstr();
 	else if (str++ == 'x')
@@ -56,9 +56,6 @@ int	ft_printf(const char *str, ...)
 		}
 		i++;
 	}
-	/*while(str[i] != '%' && str[i])
-		i++;
-	res = checkprint(str[i + 1], args);*/
 	va_end(args);
 	return (res);
 }

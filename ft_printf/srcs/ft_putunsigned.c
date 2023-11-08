@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 12:07:43 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/08 11:38:23 by bchedru          ###   ########.fr       */
+/*   Created: 2023/11/08 11:31:28 by bchedru           #+#    #+#             */
+/*   Updated: 2023/11/08 11:38:38 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../includes/ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include <stdio.h>
+static void	ft_putdigit(unsigned long int n)
+{
+	if (n > 9)
+		ft_putdigit(n / 10);
+	ft_putchar((n % 10) + '0');
+}
 
-int		ft_printf(const char *, ...);
-int		ft_putchar(char c);
-int		ft_putnbr(int n);
-int		ft_putunsigned(unsigned int n);
-int		ft_putstr(char *s);
-char	*ft_strchr(const char *s, int c);
-size_t	ft_strlen(const char *str);
-int		ft_atoi(const char *nb);
+int	ft_putunsigned(unsigned int n)
+{
+	unsigned long int	longn;
+	int			len;
 
-
-#endif
+	longn = (unsigned long int)n;
+	len = 1;
+	ft_putdigit(longn);
+	while (longn > 9)
+	{
+		longn /= 10;
+		len++;
+	}
+	return (len);
+}
