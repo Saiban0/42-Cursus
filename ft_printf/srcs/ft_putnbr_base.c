@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 12:07:43 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/06 17:28:52 by bchedru          ###   ########.fr       */
+/*   Created: 2023/11/08 11:44:58 by bchedru           #+#    #+#             */
+/*   Updated: 2023/11/08 12:13:59 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../includes/ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include <stdio.h>
+int	ft_putnbr_base(int n, char *base)
+{
+	long int	longn;
+	int			len;
 
-int		ft_printf(const char *, ...);
-void	ft_putchar(char c);
-void	ft_putnbr(int n);
-void	ft_putstr(char *s);
-char	*ft_strchr(const char *s, int c);
-size_t	ft_strlen(const char *str);
-int		ft_atoi(const char *nb);
-
-
-#endif
+	longn = (long int)n;
+	len = 1;
+	if (n < 0)
+	{
+		ft_putchar('-');
+		len++;
+		longn = -longn;
+	}
+	ft_putdigit(longn);
+	while (longn > 9)
+	{
+		longn /= 10;
+		len++;
+	}
+	return (len);
+}
