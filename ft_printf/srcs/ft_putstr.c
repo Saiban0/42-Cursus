@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:35:01 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/08 13:58:09 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/08 14:30:20 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int	ft_putstr(char *s)
 
 	i = 0;
 	if (s == NULL)
-		return(write(1, "(null)", 6));
+		return (write(1, "(null)", 6));
 	while (s[i])
 	{
 		ft_putchar(s[i]);
 		i++;
 	}
-	return(i);
+	return (i);
 }
