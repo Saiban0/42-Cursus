@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:41:10 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/22 17:34:39 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/23 15:13:49 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,8 @@ int	ft_sublen(char *str)
 	int	i;
 
 	i = 0;
-	while(str[i])
-	{
-		if (str[i] == '\n')
-		{
-			return (i);
-			write(1, "\n", 1);
-		}
+	while (str[i] && str[i] != '\n')
 		i++;
-	}
 	return (i);
 }
 
@@ -39,14 +32,12 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_substr(char *s, int len)
+char	*ft_extractline(char *s, int len)
 {
 	char	*res;
-	int	i;
+	int		i;
 
-	if (len > ft_strlen(s))
-		len = ft_strlen(s);
-	res = (char *)malloc(len + 1 * sizeof(char));
+	res = (char *)malloc(len);
 	if (!res)
 		return (NULL);
 	i = 0;
@@ -57,16 +48,4 @@ char	*ft_substr(char *s, int len)
 	}
 	res[i] = '\0';
 	return (res);
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		*(unsigned char *)(s + i) = 0;
-		i++;
-	}
 }
