@@ -6,21 +6,27 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:41:10 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/22 12:14:34 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/22 17:34:39 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	is_next_line(char *str)
+int	ft_sublen(char *str)
 {
-	while(*str)
+	int	i;
+
+	i = 0;
+	while(str[i])
 	{
-		str++;
-		if (*str == '\n')
-			return (1);
+		if (str[i] == '\n')
+		{
+			return (i);
+			write(1, "\n", 1);
+		}
+		i++;
 	}
-	return (0);
+	return (i);
 }
 
 int	ft_strlen(char *str)
@@ -33,52 +39,34 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char *s, int len)
 {
 	char	*res;
-	size_t	i;
+	int	i;
 
-	if ((int) start >= ft_strlen((char *) s))
-		len = 0;
-	else if ((int)len > ft_strlen((char *)(s + start)))
-		len = ft_strlen((char *)(s + start));
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
 	res = (char *)malloc(len + 1 * sizeof(char));
 	if (!res)
 		return (NULL);
 	i = 0;
-	while ((int)(start + i) < ft_strlen((char *) s) && i < len)
+	while (i < ft_strlen(s))
 	{
-		res[i] = s[start + i];
+		res[i] = s[i];
 		i++;
 	}
 	res[i] = '\0';
 	return (res);
 }
 
-char	*ft_strchr(const char *s, int c)
-{
-	while (*s != (unsigned char)c && *s)
-		s++;
-	if (*(unsigned char *)s == (unsigned char)c)
-		return ((char *)s);
-	return (NULL);
-}
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	if (size > 0)
+	while (i < n)
 	{
-		while (src[i] && i < size - 1)
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = 0;
-	}
-	while (src[i])
+		*(unsigned char *)(s + i) = 0;
 		i++;
-	return (i);
+	}
 }
