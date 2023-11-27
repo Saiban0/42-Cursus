@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:44:07 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/26 00:32:31 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/27 19:17:46 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <fcntl.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 42
 # endif
 
 typedef struct s_buff
@@ -28,10 +28,11 @@ typedef struct s_buff
 }				t_buff;
 
 char	*get_next_line(int fd);
-int		ft_linelen(char *str);
+int		ft_isnl(const char *s, int c);
 int		ft_strlen(char *str);
-char	*ft_extractline(t_buff *buffer);
 void	ft_putstr(char *s);
-void	ft_postprocess(char *buffer, int len);
+t_buff	*ft_read_line(int fd, t_buff *buff_struct);
+void	*ft_memmove(void *dest, const void *src, size_t n);
+char	*ft_strchr(const char *s, int c);
 
 #endif

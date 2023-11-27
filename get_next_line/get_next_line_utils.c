@@ -6,21 +6,11 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:41:10 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/26 00:39:51 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/27 19:27:21 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-int	ft_linelen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] && str[i] != '\n')
-		i++;
-	return (i);
-}
 
 int	ft_strlen(char *str)
 {
@@ -31,25 +21,45 @@ int	ft_strlen(char *str)
 		i++;
 	return (i);
 }
-
-char	*ft_extractline(t_buff *buff_struct)
+void	ft_putstr(char *s)
 {
-	char	*res;
-	int		i;
+	while (*s)
+	{
+		write(1, s, 1);
+		s++;
+	}
+}
+int	ft_isnl(const char *s, int c)
+{
+	while (*s != (unsigned char)c && *s)
+		s++;
+	if (*(unsigned char *)s == (unsigned char)c)
+		return (1);
+	return (0);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s != (unsigned char)c && *s)
+		s++;
+	if (*(unsigned char *)s == (unsigned char)c)
+		return ((char *)s);
+	return (NULL);
+}
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	size_t	i;
 
 	i = 0;
-	while (i < BUFFER_SIZE && buff_struct->buffer[i] != '\n')
-	{
-		res[i] = buff_struct->buffer[i];
-		i++;
-	}
-	if (buff_struct->buffer[i] == '\n')
-	{
-		res[i] = '\n';
-		buff_struct->endline = 1;
-		if (buff_struct->buffer[i + 1])
-			res[i + 1] = '\0';
-	}
-	res[i] = '\0';
-	return (res);
+	if (dest > src)
+		while (n-- > 0)
+			((unsigned char *)dest)[n] = ((unsigned char *)src)[n];
+	else if (dest < src)
+		while (i < n)
+		{
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
+	return (dest);
 }
