@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 19:18:45 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/29 13:30:03 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/29 17:51:08 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
+	static char	*buffer = {"\0"};
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buffer = malloc(BUFFER_SIZE + 1);
 	if (!buffer)
 		return (NULL);
 	buffer = ft_process_file(fd, buffer);
@@ -51,7 +50,7 @@ char	*ft_process_file(int fd, char *buffer)
 			}
 			return (buffer);
 		}
-		tmp[x] = '\0';
+		tmp[x + 1] = '\0';
 		buffer = ft_strjoin(buffer, tmp);
 		if (ft_strchr(buffer, '\n'))
 			break ;
@@ -71,11 +70,12 @@ char	*ft_get_line(char *buffer)
 	while (buffer[len] && buffer[len] != '\n')
 		len++;
 	line = malloc(len + 2);
-	i = 0;
-	while (i++ < len)
+	i = -1;
+	while (++i < len)
 		line[i] = buffer[i];
 	if (buffer[i] == '\n')
 		line[i] = '\n';
+	line[i + 1] = '\0';
 	return (line);
 }
 
@@ -90,33 +90,33 @@ char	*ft_save_line(char *buffer, char *line)
 	while (line[i])
 		i++;
 	if (!buffer[i])
-	{
-		free(buffer);
 		return (NULL);
-	}
 	tmp = malloc(ft_strlen(buffer) - i + 1);
 	if (!tmp)
 		return (NULL);
-	while (line[i])
+	while (buffer[i])
 		tmp[j++] = buffer[i++];
-	free(buffer);
+	tmp[j++] = '\0';
 	return (tmp);
 }
+
 
 int main(int argc, char **argv)
 {
 	int	fd;
-	char *line;
+	static char *line = NULL;
 	(void)argc;
 	fd = open(argv[1], O_RDONLY);
-	line = get_next_line(fd);
-	printf("%s\n", line);
-	free(line);
-	/*while (line)
+	if (fd == -1)
+		return (1);
+	while (1)
 	{
 		line = get_next_line(fd);
-		free(line);
-	}*/
+		if (!line)
+			break ;
+		printf("%s\n", line);
+	}
+	//free(line);
 	close(fd);
 	return (0);
 }

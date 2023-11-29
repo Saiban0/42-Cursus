@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:41:10 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/29 12:18:58 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/29 17:50:48 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,5 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		i++;
 	}
 	res[i] = '\0';
-	free((char *)s2);
 	return (res);
 }
