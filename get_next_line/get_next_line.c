@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 19:18:45 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/29 12:23:49 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/29 13:30:03 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*get_next_line(int fd)
 	if (buffer == NULL || buffer[0] == '\0')
 		return (NULL);
 	line = ft_get_line(buffer);
-	buffer = ft_save_line(line);
+	buffer = ft_save_line(buffer, line);
 	return (line);
 }
 
@@ -41,9 +41,9 @@ char	*ft_process_file(int fd, char *buffer)
 	x = 1;
 	while (x > 0)
 	{
-		if ( x <= 0)
+		x = read(fd, tmp, BUFFER_SIZE);
+		if (x <= 0)
 		{
-			x = read(fd, tmp, BUFFER_SIZE);
 			if (x == -1)
 			{
 				free(tmp);
@@ -61,25 +61,25 @@ char	*ft_process_file(int fd, char *buffer)
 
 char	*ft_get_line(char *buffer)
 {
-	int		i;
 	char	*line;
+	int		len;
+	int		i;
 
-	i = 0;
-	while (buffer[i] != '\n' && buffer[i])
-		i++;
-	line = malloc((i + 1));
-	if (!line)
+	if (!buffer)
 		return (NULL);
+	len = 0;
+	while (buffer[len] && buffer[len] != '\n')
+		len++;
+	line = malloc(len + 2);
 	i = 0;
-	while (buffer[i] != '\n' && buffer[i])
-	{
+	while (i++ < len)
 		line[i] = buffer[i];
-		i++;
-	}
-	line[i] = '\0';
+	if (buffer[i] == '\n')
+		line[i] = '\n';
 	return (line);
 }
-char	*ft_save_line(char *line)
+
+char	*ft_save_line(char *buffer, char *line)
 {
 	char	*tmp;
 	int		i;
@@ -87,21 +87,19 @@ char	*ft_save_line(char *line)
 
 	i = 0;
 	j = 0;
-	while (line[i] != '\n' && line[i])
+	while (line[i])
 		i++;
-	if (line[i] == '\n')
-		i++;
-	tmp = malloc(i + 1);
+	if (!buffer[i])
+	{
+		free(buffer);
+		return (NULL);
+	}
+	tmp = malloc(ft_strlen(buffer) - i + 1);
 	if (!tmp)
 		return (NULL);
 	while (line[i])
-	{
-		tmp[j] = line[i];
-		i++;
-		j++;
-	}
-	tmp[j] = '\0';
-	free(line);
+		tmp[j++] = buffer[i++];
+	free(buffer);
 	return (tmp);
 }
 

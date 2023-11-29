@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:44:07 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/29 12:18:17 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/29 13:29:25 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ char	*ft_process_file(int fd, char *buffer);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_get_line(char *buffer);
-char	*ft_save_line(char *line);
+char	*ft_save_line(char *buffer, char *line);
 
 #endif
