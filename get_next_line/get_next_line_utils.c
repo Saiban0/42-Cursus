@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:41:10 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/27 19:27:21 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/29 12:18:58 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,45 +21,41 @@ int	ft_strlen(char *str)
 		i++;
 	return (i);
 }
-void	ft_putstr(char *s)
-{
-	while (*s)
-	{
-		write(1, s, 1);
-		s++;
-	}
-}
-int	ft_isnl(const char *s, int c)
-{
-	while (*s != (unsigned char)c && *s)
-		s++;
-	if (*(unsigned char *)s == (unsigned char)c)
-		return (1);
-	return (0);
-}
-
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s != (unsigned char)c && *s)
+	{
 		s++;
+	}
 	if (*(unsigned char *)s == (unsigned char)c)
 		return ((char *)s);
 	return (NULL);
 }
-
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	size_t	i;
+	char	*res;
+	int		i;
+	int		j;
 
+	res = malloc((ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1));
+	if (!res)
+		return (NULL);
 	i = 0;
-	if (dest > src)
-		while (n-- > 0)
-			((unsigned char *)dest)[n] = ((unsigned char *)src)[n];
-	else if (dest < src)
-		while (i < n)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
-	return (dest);
+	j = 0;
+	while (s1[j])
+	{
+		res[i] = s1[j];
+		j++;
+		i++;
+	}
+	j = 0;
+	while (s2[j])
+	{
+		res[i] = s2[j];
+		j++;
+		i++;
+	}
+	res[i] = '\0';
+	free((char *)s2);
+	return (res);
 }
