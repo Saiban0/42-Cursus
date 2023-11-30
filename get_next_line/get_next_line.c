@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 19:18:45 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/30 18:58:16 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/30 19:14:24 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_read2buff(char *line, char *buffer, int fd)
 // int main(int argc, char **argv)
 // {
 // 	int	fd;
-// 	static char *line = NULL;
+// 	char *line = NULL;
 // 	int i = 0;
 // 	(void)argc;
 // 	fd = open(argv[1], O_RDONLY);
