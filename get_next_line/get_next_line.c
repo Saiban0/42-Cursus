@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 19:18:45 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/30 18:39:37 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/30 18:58:16 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 char	*get_next_line(int fd)
 {
 	static char	buffer[BUFFER_SIZE + 1] = {"\0"};
-	int			bytes_read;
 	char		*line;
 
 	line = ft_calloc(1, 1);
 	if (!line)
 		return (NULL);
-	bytes_read = 1;
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (free(line), NULL);
 	if (buffer[0] != '\0')
@@ -32,11 +30,22 @@ char	*get_next_line(int fd)
 		if (ft_find_n(line) > -1)
 			line[ft_find_n(line) + 1] = '\0';
 	}
+	line = ft_read2buff(line, buffer, fd);
+	if (ft_find_n(buffer) > -1)
+		ft_strcpy(buffer, buffer + ft_find_n(buffer) + 1);
+	return (line);
+}
+
+char	*ft_read2buff(char *line, char *buffer, int fd)
+{
+	int	bytes_read;
+
+	bytes_read = 1;
 	while (ft_find_n(line) == -1 && bytes_read != 0)
 	{
 		buffer[0] = '\0';
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
-		if (bytes_read == -1)
+		if (bytes_read < 0)
 			return (free(line), NULL);
 		buffer[bytes_read] = '\0';
 		line = ft_strjoin(line, buffer);
@@ -45,10 +54,8 @@ char	*get_next_line(int fd)
 	}
 	if (ft_find_n(line) > -1)
 		line[ft_find_n(line) + 1] = '\0';
-	if (ft_find_n(buffer) > -1)
-		ft_strcpy(buffer, buffer + ft_find_n(buffer) + 1);
 	if (line[0] == '\0')
-		return(free(line), NULL);
+		return (free(line), NULL);
 	return (line);
 }
 // #include <stdio.h>

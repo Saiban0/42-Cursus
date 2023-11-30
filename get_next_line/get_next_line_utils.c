@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:41:10 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/30 18:35:17 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/30 18:58:04 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	ft_strlen(char *str)
 		i++;
 	return (i);
 }
+
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*res;
@@ -49,6 +50,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	free((char *)s1);
 	return (res);
 }
+
 char	*ft_strcpy(char *dst, char *src)
 {
 	int	i;
@@ -62,6 +64,7 @@ char	*ft_strcpy(char *dst, char *src)
 	dst[i] = '\0';
 	return (dst);
 }
+
 int	ft_find_n(char *str)
 {
 	int	i;
@@ -85,7 +88,7 @@ char	*ft_calloc(int nmemb, int size)
 	res = (char *)malloc(nmemb * size);
 	if (!res)
 		return (NULL);
-	while(i < size)
+	while (i < size)
 	{
 		res[i] = '\0';
 		i++;

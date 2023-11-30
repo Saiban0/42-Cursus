@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:44:07 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/30 18:38:40 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/30 18:43:56 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strcpy(char *dst, char *src);
 int		ft_find_n(char *str);
 char	*ft_calloc(int nmemb, int size);
+char	*ft_read2buff(char *line, char *buffer, int fd);
 
 #endif
