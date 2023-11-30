@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 19:18:45 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/30 18:29:13 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/30 18:39:37 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*get_next_line(int fd)
 		return(free(line), NULL);
 	return (line);
 }
-
+// #include <stdio.h>
 // int main(int argc, char **argv)
 // {
 // 	int	fd;
@@ -61,11 +61,9 @@ char	*get_next_line(int fd)
 // 	fd = open(argv[1], O_RDONLY);
 // 	if (fd == -1)
 // 		return (1);
-// 	while (i < 20)
+// 	while (i < 15)
 // 	{
 // 		line = get_next_line(fd);
-// 		// if (line[0] == '\0')
-// 		// 	break ;
 // 		printf("%s", line);
 // 		free(line);
 // 		i++;
