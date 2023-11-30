@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:44:07 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/30 18:25:21 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/30 18:35:25 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,7 @@
 
 char	*get_next_line(int fd);
 int		ft_strlen(char *str);
-char	*ft_process_file(int fd, char *buffer);
-char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(const char *s1, const char *s2);
-// char	*ft_get_line(char *buffer);
-// char	*ft_save_line(char *buffer);
 char	*ft_strcpy(char *dst, char *src);
 int		ft_find_n(char *str);
 char	*ft_calloc(int nmemb, int size);

@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:41:10 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/30 18:28:47 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/30 18:35:17 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,6 @@ int	ft_strlen(char *str)
 	while (str[i])
 		i++;
 	return (i);
-}
-char	*ft_strchr(const char *s, int c)
-{
-	while (*s != (unsigned char)c && *s)
-	{
-		s++;
-	}
-	if (*(unsigned char *)s == (unsigned char)c)
-		return ((char *)s);
-	return (NULL);
 }
 char	*ft_strjoin(const char *s1, const char *s2)
 {
