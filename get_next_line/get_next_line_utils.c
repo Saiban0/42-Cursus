@@ -6,7 +6,7 @@
 /*   By: bchedru <bchedru@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:41:10 by bchedru           #+#    #+#             */
-/*   Updated: 2023/11/29 17:50:48 by bchedru          ###   ########.fr       */
+/*   Updated: 2023/11/30 18:28:47 by bchedru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	int		i;
 	int		j;
 
+	i = 0;
+	j = 0;
 	res = malloc((ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1));
 	if (!res)
 		return (NULL);
-	i = 0;
-	j = 0;
 	while (s1[j])
 	{
 		res[i] = s1[j];
@@ -56,5 +56,49 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		i++;
 	}
 	res[i] = '\0';
+	free((char *)s1);
+	return (res);
+}
+char	*ft_strcpy(char *dst, char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
+}
+int	ft_find_n(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '\n')
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+char	*ft_calloc(int nmemb, int size)
+{
+	char	*res;
+	int		i;
+
+	i = 0;
+	res = (char *)malloc(nmemb * size);
+	if (!res)
+		return (NULL);
+	while(i < size)
+	{
+		res[i] = '\0';
+		i++;
+	}
 	return (res);
 }
